@@ -1,24 +1,26 @@
 const myLibrary = [];
 const body=document.querySelector("body");
-function Book(title,author,pages,read,id) {
-  this.title=title;
-  this.author=author;
-  this.pages=pages;
-  this.read=read;
-  this.id=id;
-  this.remove=document.createElement("button");
-  this.remove.textContent="Remove";
-  this.remove.addEventListener("click",(event)=>{
-    const card=document.getElementById(this.id);
-    body.removeChild(card);
-  });
-  this.changeRead=document.createElement("button");
-  this.changeRead.addEventListener("click",(event)=>{
-    this.read= (!this.read);
-    const card=document.getElementById(this.id);
-    body.removeChild(card);
-    displayCard(this);
-  });
+class Book {
+  constructor(title,author,pages,read,id){
+    this.title=title;
+    this.author=author;
+    this.pages=pages;
+    this.read=read;
+    this.id=id;
+    this.remove=document.createElement("button");
+    this.remove.textContent="Remove";
+    this.remove.addEventListener("click",(event)=>{
+      const card=document.getElementById(this.id);
+      body.removeChild(card);
+    });
+    this.changeRead=document.createElement("button");
+    this.changeRead.addEventListener("click",(event)=>{
+      this.read= (!this.read);
+      const card=document.getElementById(this.id);
+      body.removeChild(card);
+      displayCard(this);
+    });
+  }
   // the constructor...
 }
 
